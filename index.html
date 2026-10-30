@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gn Gaming | Premium Hub</title>
+    <style>
+        /* Global Styles & Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0b0c10;
+            color: #c5c6c7;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background-color: #1f2833;
+            border-bottom: 2px solid #45f3ff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #45f3ff;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 16px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #45f3ff;
+        }
+
+        .btn-nav {
+            background: linear-gradient(45deg, #45f3ff, #1f2833);
+            color: #0b0c10;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 700;
+            border: 1px solid #45f3ff;
+            transition: all 0.3s ease;
+        }
+
+        .btn-nav:hover {
+            background: transparent;
+            color: #45f3ff;
+            box-shadow: 0 0 15px #45f3ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(11, 12, 16, 0.7), #0b0c10), 
+                        url('https://unsplash.com') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            color: #fff;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(69, 243, 255, 0.6);
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 600px;
+            margin-bottom: 30px;
+            color: #c5c6c7;
+        }
+
+        .btn-main {
+            background-color: #45f3ff;
+            color: #0b0c10;
+            padding: 15px 40px;
+            font-size: 18px;
+            font-weight: 700;
+            border-radius: 30px;
+            text-transform: uppercase;
+            box-shadow: 0 5px 15px rgba(69, 243, 255, 0.4);
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px #45f3ff;
+        }
+
+        /* Content Section */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #fff;
+            margin-bottom: 40px;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: #45f3ff;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Game Grid Layout */
+        .game-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .game-card {
+            background-color: #1f2833;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #2e3c4e;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .game-card:hover {
+            transform: translateY(-10px);
+            border-color: #45f3ff;
+        }
+
+        .game-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .game-info {
+            padding: 20px;
+        }
+
+        .game-info h3 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-size: 22px;
+        }
+
+        .game-info p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn-card {
+            display: inline-block;
+            color: #45f3ff;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            border-bottom: 2px solid transparent;
+            transition: border 0.2s;
+        }
+
+        .btn-card:hover {
+            border-bottom: 2px solid #45f3ff;
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #0b0c10;
+            border-top: 1px solid #1f2833;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .footer p {
+            margin-bottom: 10px;
+        }
+        
+        .footer span {
+            color: #45f3ff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav class="navbar">
+        <div class="logo">NEXUS<span>GAMING</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#games">Trending</a></li>
+            <li><a href="#tournaments">Tournaments</a></li>
+            <li><a href="#about">About</a></li>
+        </ul>
+        <a href="#join" class="btn-nav">LOGIN</a>
+    </nav>
+
+    <!-- Main Hero Banner -->
+    <header class="hero" id="home">
+        <h1>Unleash Next-Gen Gaming</h1>
+        <p>Explore the most anticipated releases, join massive online tournaments, and connect with millions of players worldwide.</p>
+        <a href="#games" class="btn-main">Browse Games</a>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="container" id="games">
+        <h2 class="section-title">Trending Games</h2>
+        
+        <div class="game-grid">
+            <!-- Game Card 1 -->
+            <article class="game-card">
+                <img class="game-img" src="https://unsplash.com" alt="Cyber Horizon Grid">
+                <div class="game-info">
+                    <h3>Cyber Horizon</h3>
+                    <p>Dive deep into a sprawling neon neon-drenched cityscape in this open-world action RPG filled with tactical enhancements.</p>
+                    <a href="#" class="btn-card">Play Now</a>
+                </div>
+            </article>
+
+            <!-- Game Card 2 -->
+            <article class="game-card">
+                <img class="game-img" src="https://unsplash.com" alt="Realm of Valkyries Battlefield">
+                <div class="game-info">
+                    <h3>Realm of Valkyries</h3>
+                    <p>Engage in competitive 5v5 tactical arena battles. Master structural spellcasting and secure your team's legacy.</p>
+                    <a href="#" class="btn-card">Play Now</a>
+                </div>
+            </article>
+
+            <!-- Game Card 3 -->
+            <article class="game-card">
+                <img class="game-img" src="https://unsplash.com" alt="Shadow Siege Concept Art">
+                <div class="game-info">
+                    <h3>Shadow Siege</h3>
+                    <p>A high-stakes tactical shooter emphasizing destructible cover environments and rapid team coordination.</p>
+                    <a href="#" class="btn-card">Play Now</a>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="footer">
+        <p>&copy; 2026 <span>Nexus Gaming</span>. All rights reserved.</p>
+        <p>Designed for performance and immersive gameplay experiences.</p>
+    </footer>
+
+</body>
+</html>
